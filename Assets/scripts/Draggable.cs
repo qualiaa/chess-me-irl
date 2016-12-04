@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent (typeof (TargetJoint2D))]
-public class Pawn : MonoBehaviour {
+public class Draggable : MonoBehaviour {
 
 	private TargetJoint2D target_;
 
