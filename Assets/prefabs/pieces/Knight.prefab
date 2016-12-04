@@ -21,6 +21,9 @@ GameObject:
   - 4: {fileID: 4000011735546392}
   - 212: {fileID: 212000013431357464}
   - 114: {fileID: 114000011597383646}
+  - 50: {fileID: 50000010766704348}
+  - 114: {fileID: 114000010684025590}
+  - 60: {fileID: 60000011275002768}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -41,6 +44,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &50000010766704348
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011572394624}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &60000011275002768
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011572394624}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.17999999, y: 0.28}
+      - {x: 0.049999997, y: 0.38}
+      - {x: -0.25, y: 0.38}
+      - {x: -0.32999998, y: 0.13}
+      - {x: -0.39, y: 0.01}
+      - {x: -0.39, y: -0.19999999}
+      - {x: -0.38, y: -0.24}
+      - {x: -0.22999999, y: -0.28}
+      - {x: -0.14999999, y: -0.25}
+      - {x: -0.17, y: -0.29999998}
+      - {x: -0.17999999, y: -0.38}
+      - {x: 0.39, y: -0.38}
+      - {x: 0.39, y: -0.04}
+      - {x: 0.34, y: 0.13}
+    - - {x: 0.26999998, y: 0.14}
+      - {x: 0.099999994, y: 0.21}
+      - {x: 0.06, y: 0.19999999}
+      - {x: 0.28, y: -0.11}
+      - {x: 0.29999998, y: -0.29}
+      - {x: 0.35999998, y: -0.32999998}
+    - - {x: -0.17, y: 0.14}
+      - {x: -0.14999999, y: 0.14}
+      - {x: -0.17, y: 0.12}
+      - {x: -0.19999999, y: 0.11}
+--- !u!114 &114000010684025590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011572394624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 264cd120bb3434110a59b9a65a1132a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000011597383646
 MonoBehaviour:
   m_ObjectHideFlags: 1
