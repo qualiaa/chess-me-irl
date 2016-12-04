@@ -20,14 +20,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012634558956}
   - 212: {fileID: 212000012530811750}
-  - 114: {fileID: 114000010439557640}
   - 50: {fileID: 50000013277461006}
   - 257: {fileID: 257000012688175608}
-  - 114: {fileID: 114000010396434376}
   - 58: {fileID: 58000011417638286}
+  - 114: {fileID: 114000010439557640}
+  - 114: {fileID: 114000010396434376}
   m_Layer: 9
   m_Name: Bishop
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceColor: 1
+  pieceType: 2
 --- !u!212 &212000012530811750
 SpriteRenderer:
   m_ObjectHideFlags: 1

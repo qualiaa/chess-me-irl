@@ -20,13 +20,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011735546392}
   - 212: {fileID: 212000013431357464}
-  - 114: {fileID: 114000011597383646}
   - 50: {fileID: 50000010766704348}
-  - 114: {fileID: 114000010684025590}
   - 60: {fileID: 60000011275002768}
+  - 114: {fileID: 114000011597383646}
+  - 114: {fileID: 114000010684025590}
   m_Layer: 0
   m_Name: Knight
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceColor: 1
+  pieceType: 3
 --- !u!212 &212000013431357464
 SpriteRenderer:
   m_ObjectHideFlags: 1

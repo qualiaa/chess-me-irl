@@ -21,9 +21,14 @@ GameObject:
   - 4: {fileID: 4000014078682786}
   - 212: {fileID: 212000010516221736}
   - 114: {fileID: 114000012449535772}
+  - 50: {fileID: 50000011350194760}
+  - 257: {fileID: 257000013921764224}
+  - 114: {fileID: 114000011829021356}
+  - 60: {fileID: 60000012357570850}
+  - 256: {fileID: 256000012937560602}
   m_Layer: 0
   m_Name: King
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,6 +46,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &50000011350194760
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011061372590}
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!60 &60000012357570850
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011061372590}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.10819864, y: 0.14255714}
+      - {x: 0.03173393, y: 0.37095666}
+      - {x: 0.018125415, y: 0.41083694}
+      - {x: -0.022677928, y: 0.40686774}
+      - {x: -0.039658844, y: 0.3729143}
+      - {x: -0.11005345, y: 0.14328742}
+      - {x: -0.2823436, y: 0.18025494}
+      - {x: -0.38866767, y: 0.08983636}
+      - {x: -0.38888994, y: -0.010033131}
+      - {x: -0.25594488, y: -0.37814307}
+      - {x: -0.1368188, y: -0.42239952}
+      - {x: 0.1597091, y: -0.42757893}
+      - {x: 0.26774716, y: -0.35894895}
+      - {x: 0.39340228, y: 0.0007419586}
+      - {x: 0.39, y: 0.155}
+    - - {x: 0.14999999, y: -0.315}
+      - {x: 0.17, y: -0.305}
+      - {x: 0.07, y: -0.285}
+      - {x: -0.07, y: -0.285}
+      - {x: -0.17, y: -0.305}
+      - {x: -0.16, y: -0.315}
+    - - {x: -0.04, y: -0.125}
+      - {x: -0.049999997, y: -0.074999996}
+      - {x: -0.06, y: -0.114999995}
+      - {x: -0.03, y: -0.145}
+      - {x: -0.03, y: -0.13499999}
+      - {x: -0.08, y: -0.145}
+      - {x: -0.07, y: -0.155}
+    - - {x: 0.03, y: -0.145}
+      - {x: 0.06, y: -0.114999995}
+      - {x: 0.049999997, y: -0.035}
+      - {x: 0.01, y: -0.13499999}
+--- !u!114 &114000011829021356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011061372590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4819dcf63465546bb8b5b0c84e5f9e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012449535772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceColor: 1
+  pieceType: 0
 --- !u!212 &212000010516221736
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -86,3 +166,38 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!256 &256000012937560602
+FrictionJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011061372590}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_MaxForce: 1
+  m_MaxTorque: 1
+--- !u!257 &257000013921764224
+TargetJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011061372590}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_Anchor: {x: 0, y: 0}
+  m_Target: {x: 0.5, y: 3.5}
+  m_AutoConfigureTarget: 1
+  m_MaxForce: 10000
+  m_DampingRatio: 1
+  m_Frequency: 5

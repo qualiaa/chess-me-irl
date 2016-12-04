@@ -28,7 +28,7 @@ GameObject:
   - 114: {fileID: 114000010603286772}
   m_Layer: 0
   m_Name: Pawn
-  m_TagString: Untagged
+  m_TagString: Piece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieceColor: 1
+  pieceType: 5
 --- !u!114 &114000010603286772
 MonoBehaviour:
   m_ObjectHideFlags: 1

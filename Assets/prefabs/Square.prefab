@@ -21,6 +21,7 @@ GameObject:
   - 224: {fileID: 224000012322012360}
   - 222: {fileID: 222000011787760902}
   - 114: {fileID: 114000013539585624}
+  - 114: {fileID: 114000010510645046}
   m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
@@ -28,6 +29,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114000010510645046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012602150902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd333de749fab40f1a336200cd9ba66e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013539585624
 MonoBehaviour:
   m_ObjectHideFlags: 1
