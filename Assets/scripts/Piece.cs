@@ -17,9 +17,4 @@ public class Piece : MonoBehaviour {
 			r.material.color = Color.black;
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

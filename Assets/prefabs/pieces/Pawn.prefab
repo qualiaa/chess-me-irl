@@ -22,10 +22,10 @@ GameObject:
   - 212: {fileID: 212000013188130298}
   - 114: {fileID: 114000010108312054}
   - 114: {fileID: 114000010603286772}
-  - 61: {fileID: 61000010419624964}
   - 50: {fileID: 50000014273367224}
   - 257: {fileID: 257000012047069508}
   - 256: {fileID: 256000012844996432}
+  - 60: {fileID: 60000011935549110}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Untagged
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61000010419624964
-BoxCollider2D:
+--- !u!60 &60000011935549110
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,8 +75,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.75}
+  m_Points:
+    m_Paths:
+    - - {x: 0.0913713, y: 0.33984995}
+      - {x: 0.035296917, y: 0.37999892}
+      - {x: -0.07825971, y: 0.36163044}
+      - {x: -0.1684103, y: 0.14540863}
+      - {x: -0.205, y: 0.04}
+      - {x: -0.27040768, y: -0.25185204}
+      - {x: -0.275, y: -0.38}
+      - {x: 0.275, y: -0.38}
+      - {x: 0.27729678, y: -0.25170422}
+      - {x: 0.18055487, y: 0.1108129}
 --- !u!114 &114000010108312054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +149,7 @@ FrictionJoint2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011873566400}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
@@ -147,7 +157,7 @@ FrictionJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 3.5, y: -2.5}
   m_MaxForce: 10
   m_MaxTorque: 1
 --- !u!257 &257000012047069508
@@ -158,7 +168,7 @@ TargetJoint2D:
   m_GameObject: {fileID: 1000011873566400}
   m_Enabled: 0
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
