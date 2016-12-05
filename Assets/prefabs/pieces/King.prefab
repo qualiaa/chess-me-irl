@@ -20,12 +20,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000014078682786}
   - 212: {fileID: 212000010516221736}
-  - 114: {fileID: 114000012449535772}
   - 50: {fileID: 50000011350194760}
   - 257: {fileID: 257000013921764224}
-  - 114: {fileID: 114000011829021356}
   - 60: {fileID: 60000012357570850}
   - 256: {fileID: 256000012937560602}
+  - 114: {fileID: 114000012449535772}
+  - 114: {fileID: 114000011829021356}
+  - 114: {fileID: 114000012926477096}
   m_Layer: 0
   m_Name: King
   m_TagString: Piece
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011061372590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -54,7 +55,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011061372590}
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -133,6 +134,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pieceColor: 1
   pieceType: 0
+--- !u!114 &114000012926477096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011061372590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5615aeb5f9f14aa3915888b1fcb5018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safeMass: 100000
+  dangerMass: 1
 --- !u!212 &212000010516221736
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -180,7 +194,7 @@ FrictionJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0.5, y: -3.5}
   m_MaxForce: 1
   m_MaxTorque: 1
 --- !u!257 &257000013921764224
@@ -189,14 +203,14 @@ TargetJoint2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011061372590}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_Anchor: {x: 0, y: 0}
-  m_Target: {x: 0.5, y: 3.5}
+  m_Target: {x: 0.5, y: -3.5}
   m_AutoConfigureTarget: 1
   m_MaxForce: 10000
   m_DampingRatio: 1

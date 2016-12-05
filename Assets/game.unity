@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37356412, g: 0.38112006, b: 0.35887668, a: 1}
+  m_IndirectSpecularColor: {r: 0.37356445, g: 0.38112047, b: 0.35887688, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3314,40 +3314,6 @@ Prefab:
     - target: {fileID: 4000014078682786, guid: 0653e183cc69a4024b8a9a91f04b8f58, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012449535772, guid: 0653e183cc69a4024b8a9a91f04b8f58,
-        type: 2}
-      propertyPath: pieceColor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000011061372590, guid: 0653e183cc69a4024b8a9a91f04b8f58, type: 2}
-      propertyPath: m_TagString
-      value: Piece
-      objectReference: {fileID: 0}
-    - target: {fileID: 257000013921764224, guid: 0653e183cc69a4024b8a9a91f04b8f58,
-        type: 2}
-      propertyPath: m_EnableCollision
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 257000013921764224, guid: 0653e183cc69a4024b8a9a91f04b8f58,
-        type: 2}
-      propertyPath: m_Target.y
-      value: -3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 256000012937560602, guid: 0653e183cc69a4024b8a9a91f04b8f58,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 256000012937560602, guid: 0653e183cc69a4024b8a9a91f04b8f58,
-        type: 2}
-      propertyPath: m_ConnectedAnchor.y
-      value: -3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 256000012937560602, guid: 0653e183cc69a4024b8a9a91f04b8f58,
-        type: 2}
-      propertyPath: m_MaxForce
-      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0653e183cc69a4024b8a9a91f04b8f58, type: 2}

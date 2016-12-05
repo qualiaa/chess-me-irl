@@ -18,13 +18,22 @@ public class Square : MonoBehaviour {
 		color_ = GetComponent<Image> ().color;
 	}
 
-	public void Clear() {
+	public void Clear()
+	{
 		GetComponent<Image> ().color = color_;
 		occupied = false;
+		threatenedBy [PieceColor.Black] = false;
+		threatenedBy [PieceColor.White] = false;
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
+	public void SetColor(Color c)
+	{
+		c.a = 0.35f;
+		GetComponent<Image> ().color = c;
+	}
+
+	public void SetThreat(PieceColor c, bool t = true)
+	{
+		threatenedBy [c] = t;
 	}
 }
