@@ -17,16 +17,17 @@ public class Knight : MonoBehaviour {
 	Vector3 lastMousePos_;
 	Color color_;
 
-	const float gravity = -1f;
-	const float height = 50f;
+	const float gravity = -1500f;
+	const float height = 0.5f;
+	const float maxForce = 3500f;
+	const float mouseToForceFiddleFactor = 3500f;
 
-	const float maxForce = 80f;
+
 	const float maxForceSqr = maxForce * maxForce;
-
-	const float mouseToForceFiddleFactor = 75f;
 
 	float zVel = 0f;
 	float zPos = 0f;
+	float startFlight;
 
 	void Start () {
 		body_ = GetComponent<Rigidbody2D> ();
@@ -43,28 +44,40 @@ public class Knight : MonoBehaviour {
 		
 	void OnMouseDrag() {
 		var force = getForce ();
+		var v = force.z / body_.mass;
 		force.z = 0f;
-		line_.SetPositions (new Vector3[]{transform.position, transform.position + force / 10});
+
+		var t = -2 * (v / gravity);
+		Debug.Log (t);
+
+		var disp = (force * Time.fixedDeltaTime) * t  / body_.mass;
+		line_.SetPositions (new Vector3[]{transform.position, transform.position + disp});
 	}
 
 	void OnMouseUp() {
 		line_.enabled = false;
 
 		var force = getForce ();
-		var mass = body_.mass;
 
-		zVel += force.z / mass;
+		startFlight = Time.time;
+
+		zVel += force.z / body_.mass;
 		body_.AddForce (new Vector2(force.x, force.y));
 
 		line_.SetPositions (new Vector3[]{Vector3.zero, Vector3.zero});
 	}
 
-	void Update()
+	void FixedUpdate()
 	{
+		var dt = Time.fixedDeltaTime;
 		friction_.enabled = false;
 
-		zPos += zVel / 2;
-		zVel += gravity / 2;
+		bool airbourne = false;
+		if (zPos > 0) {
+			airbourne = true;
+		}
+		zPos += zVel * dt / 2;
+		zVel += gravity * dt / 2;
 
 		if (zPos > height) {
 			sprite_.color = Color.red;
@@ -74,10 +87,13 @@ public class Knight : MonoBehaviour {
 			collider_.isTrigger = false;
 		}
 
-		zPos += zVel / 2;
-		zVel += gravity / 2;
+		zPos += zVel * dt / 2;
+		zVel += gravity * dt / 2;
 
 		if (zPos < 0) {
+			if (airbourne) {
+				Debug.Log (Time.time - startFlight);
+			}
 			zPos = 0;
 			zVel = 0;
 			friction_.enabled = true;
@@ -97,9 +113,6 @@ public class Knight : MonoBehaviour {
 
 		force.x = force.normalized.x * magnitude;
 		force.y = force.normalized.y * magnitude;
-
-		Debug.Log (force);
-
 		force.z = (float)Math.Sqrt(maxForceSqr - magnitudeSqr);
 
 		return force;
