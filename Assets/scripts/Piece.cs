@@ -21,8 +21,8 @@ public class Piece : MonoBehaviour {
 
 	public static int GetTileIndex(Transform t)
 	{
-		int x = (int)(t.position.x + 3.5f);
-		int y = (int)(-t.position.y + 3.5f);
+		int x = (int)(t.position.x + 4f);
+		int y = (int)(-t.position.y + 4f);
 
 		if (x < 0 || y < 0 || x >= 8 || y >= 8) {
 			return -1;

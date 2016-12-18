@@ -3,19 +3,20 @@ using System.Collections;
 
 [RequireComponent (typeof (Piece))]
 [RequireComponent (typeof (Rigidbody2D))]
+[RequireComponent (typeof (SpriteRenderer))]
 public class King : MonoBehaviour {
 
 	public float safeMass;
 	public float dangerMass;
 	PieceColor myColor_;
 	Rigidbody2D body_;
+	SpriteRenderer sprite_;
 
 	void Start () {
 		myColor_ = GetComponent<Piece> ().pieceColor;
 		body_ = GetComponent<Rigidbody2D> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		int i = Piece.GetTileIndex (transform);
 		if (i >= 0) {
@@ -25,7 +26,6 @@ public class King : MonoBehaviour {
 
 			if (square.threatenedBy [otherColor]) {
 				body_.mass = dangerMass;
-				Debug.Log (myColor_.ToString () + " King in Danger!");
 				square.SetColor (Color.red);
 			} else {
 				body_.mass = safeMass;
