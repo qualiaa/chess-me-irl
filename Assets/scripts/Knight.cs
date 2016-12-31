@@ -52,6 +52,8 @@ public class Knight : MonoBehaviour {
 
 		var disp = (force * Time.fixedDeltaTime) * t  / body_.mass;
 		line_.SetPositions (new Vector3[]{transform.position, transform.position + disp});
+		line_.material.SetFloat ("_Length", disp.magnitude);
+		Debug.Log (disp.magnitude);
 	}
 
 	void OnMouseUp() {
@@ -65,6 +67,7 @@ public class Knight : MonoBehaviour {
 		body_.AddForce (new Vector2(force.x, force.y));
 
 		line_.SetPositions (new Vector3[]{Vector3.zero, Vector3.zero});
+		line_.material.SetFloat ("_Length", 1);
 	}
 
 	void FixedUpdate()
@@ -91,9 +94,11 @@ public class Knight : MonoBehaviour {
 		zVel += gravity * dt / 2;
 
 		if (zPos < 0) {
+			/*
 			if (airbourne) {
 				Debug.Log (Time.time - startFlight);
 			}
+			*/
 			zPos = 0;
 			zVel = 0;
 			friction_.enabled = true;
