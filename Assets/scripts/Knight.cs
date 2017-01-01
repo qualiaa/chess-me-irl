@@ -27,7 +27,7 @@ public class Knight : MonoBehaviour {
 
 	float zVel = 0f;
 	float zPos = 0f;
-	float startFlight;
+	//float startFlight;
 
 	void Start () {
 		body_ = GetComponent<Rigidbody2D> ();
@@ -48,12 +48,10 @@ public class Knight : MonoBehaviour {
 		force.z = 0f;
 
 		var t = -2 * (v / gravity);
-		Debug.Log (t);
 
 		var disp = (force * Time.fixedDeltaTime) * t  / body_.mass;
 		line_.SetPositions (new Vector3[]{transform.position, transform.position + disp});
 		line_.material.SetFloat ("_Length", disp.magnitude);
-		Debug.Log (disp.magnitude);
 	}
 
 	void OnMouseUp() {
@@ -61,7 +59,7 @@ public class Knight : MonoBehaviour {
 
 		var force = getForce ();
 
-		startFlight = Time.time;
+		//startFlight = Time.time;
 
 		zVel += force.z / body_.mass;
 		body_.AddForce (new Vector2(force.x, force.y));

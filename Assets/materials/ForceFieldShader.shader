@@ -4,13 +4,14 @@
 	{
 		[PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
 		_Color ("Tint", Color) = (1,1,1,1)
+		[HideInInspector] _StartTime ("StartTime", Vector) = (0,0,0,0)
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
 	}
 
 	SubShader
 	{
 		Tags
-		{ 
+		{
 			"Queue"="Transparent" 
 			"IgnoreProjector"="True" 
 			"RenderType"="Transparent" 
@@ -92,12 +93,14 @@
              	return frac(sin(_Time.x * dot(pos ,float2(12.9898,78.233))) * 43758.5453);
          	}
 
+         	float3 _StartTime;
+
 			fixed4 frag(v2f IN) : SV_Target
 			{
 				fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
 				c.a = 0.5;
 
-
+				// Calculate distance and angle from center 
 				float2 pos = IN.texcoord.xy - 0.5;
 				float r2 = (pos.x*pos.x + pos.y*pos.y);
 				float th = atan2(pos.y/0.4,pos.x/0.4);
@@ -106,22 +109,29 @@
 				//float th = (1 + floor(pos.y*0.9)) * (acos(pos.x/RADIUS))
 			 	//         + (1 - ceil(pos.y*0.9)) * (PI+acos(-pos.x/RADIUS));
 
-				r2 +=  0.01*sin(th*10 + _Time.w) + rand(pos)/20;
+			 	// Perturb radius with angle and time
+				r2 +=  0.005*sin(th*2 + _Time.w) + rand(pos)/20;
 
 				// Create circle-ish alpha mask
-				float circle_mask = (RADIUS_SQR - r2) * 100;
-				circle_mask = clamp(circle_mask,0,1);
+				float circleMask = (RADIUS_SQR - r2) * 100;
+				circleMask = clamp(circleMask,0,1);
 
-				// colour
-				c.rg = 0.75;
-				c.b = 0.7;
+				// Shimmering blue colour
+				c.rg = 0.7;
+				c.b = 0.75;
 
 				float p = 0.3 * sin(3.14159*pos.x/0.4 + _Time.x) * sin(3.141592*pos.y/0.4  + _Time.x*2) * _SinTime.w;
 				c.b += p;
 
+				// Fade
+				float timeFade =      _StartTime.z  * (_Time.y - _StartTime.x)
+							   + (1 - _StartTime.z) * (min(_StartTime.y - _StartTime.x,1) - (_Time.y - _StartTime.y));
 
+				timeFade = clamp(timeFade,0,1);
+				timeFade = log(timeFade+1);
+				// Apply
 
-				c.a *= circle_mask;//_SinTime.w/2 + 0.5;
+				c.a *= circleMask * timeFade;//_SinTime.w/2 + 0.5;
 
 				c.rgb *= c.a;
 				return c;
