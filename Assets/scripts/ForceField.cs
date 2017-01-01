@@ -22,4 +22,8 @@ public class ForceField : MonoBehaviour {
 			other.gameObject.GetComponent<Rigidbody2D> ().AddForce(delta.normalized * magnitude);
 		}
 	}
+
+	void OnMouseClick() {}
+	void OnMouseDown() {}
+	void OnMouseDrag() {} 
 }
